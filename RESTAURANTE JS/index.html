@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>RESTAURANTE</title>
+</head>
+<body>
+    <h1 style="text-align: center;">EL MEJOR RESTAURANTE</h1>
+
+    <label for="tipoPlato">Tipo de Plato:</label>
+    <select id="tipoPlato">
+        <option value="Sancocho">Sancocho</option>
+        <option value="Arroz con pollo">Arroz con pollo</option>
+        <option value="Pasta napolitana">Pasta napolitana</option>
+    </select>
+    <br>
+
+    <label for="cantidadPatos">Cantidad de Platos:</label>
+    <input type="number" id="cantidadPatos" min="1" value="1">
+    <br>
+
+    <label for="totalBebidas">Tipo de Bebida:</label>
+    <select id="totalBebidas">
+        <option value="Gaseosas">Gaseosas</option>
+        <option value="Limonadas">Limonadas</option>
+        <option value="jugosas">Jugosas</option>
+    </select>
+    <br>
+
+    <label for="cantidadBebida">Cantidad de Bebidas:</label>
+    <input type="number" id="cantidadBebida" min="1" value="1">
+    <br>
+
+    <button onclick="pedidos()">Calcular Total</button>
+    <br>
+
+    <div id="resultado"></div>
+
+    <script>
+        function pedidos() {
+            var tipoPlato=document.getElementById("tipoPlato").value;
+            var cantidadPatos=parseInt(document.getElementById("cantidadPatos").value);
+            var totalBebidas=document.getElementById("totalBebidas").value;
+            var cantidadBebida=parseInt(document.getElementById("cantidadBebida").value);
+
+            var precioPlatos = {
+                "Sancocho": 20000,
+                "Arroz con pollo": 15600,
+                "Pasta napolitana": 30000,
+            };
+
+            var precioBebidas={
+                "Gaseosas": 1500,
+                "Limonadas": 3000,
+                "jugosas": 3500,
+            };
+            
+            var totalPlatos= precioPlatos[tipoPlato]*cantidadPatos;
+            var totalBebidas= precioBebidas[totalBebidas]*cantidadBebida;
+            var total=  totalPlatos + totalBebidas;
+
+            var resultado = document.getElementById("resultado");
+            resultado.textContent = "total a pagar: $" + total;
+        }
+    </script>
+</body>
+</html>
+
+
