@@ -1,15 +1,32 @@
+<!-- Declaración del tipo de documento -->
 <!DOCTYPE html>
+
+<!-- Inicio del documento HTML -->
 <html>
 <head>
+    <!-- Configuración de la codificación de caracteres -->
     <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Enlace a la hoja de estilo de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Inclusión del script de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <!-- Enlace a la hoja de estilo personalizada -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Título de la página -->
     <title>RESTAURANTE</title>
 </head>
 <body>
+    <!-- Encabezado principal -->
     <h1 style="text-align: center;">EL MEJOR RESTAURANTE</h1>
 
+    <!-- Etiqueta y selección del tipo de plato -->
     <label for="tipoPlato">Tipo de Plato:</label>
     <select id="tipoPlato">
         <option value="Sancocho">Sancocho</option>
@@ -18,10 +35,12 @@
     </select>
     <br>
 
+    <!-- Etiqueta y entrada para la cantidad de platos -->
     <label for="cantidadPatos">Cantidad de Platos:</label>
     <input type="number" id="cantidadPatos" min="1" value="1">
     <br>
 
+    <!-- Etiqueta y selección del tipo de bebida -->
     <label for="totalBebidas">Tipo de Bebida:</label>
     <select id="totalBebidas">
         <option value="Gaseosas">Gaseosas</option>
@@ -30,43 +49,49 @@
     </select>
     <br>
 
+    <!-- Etiqueta y entrada para la cantidad de bebidas -->
     <label for="cantidadBebida">Cantidad de Bebidas:</label>
     <input type="number" id="cantidadBebida" min="1" value="1">
     <br>
 
+    <!-- Botón para calcular el total -->
     <button onclick="pedidos()">Calcular Total</button>
     <br>
 
+    <!-- Resultado del cálculo -->
     <div id="resultado"></div>
 
+    <!-- Script JavaScript para el cálculo del total -->
     <script>
         function pedidos() {
-            var tipoPlato=document.getElementById("tipoPlato").value;
-            var cantidadPatos=parseInt(document.getElementById("cantidadPatos").value);
-            var totalBebidas=document.getElementById("totalBebidas").value;
-            var cantidadBebida=parseInt(document.getElementById("cantidadBebida").value);
+            // Obtención de los valores seleccionados y las cantidades
+            var tipoPlato = document.getElementById("tipoPlato").value;
+            var cantidadPatos = parseInt(document.getElementById("cantidadPatos").value);
+            var totalBebidas = document.getElementById("totalBebidas").value;
+            var cantidadBebida = parseInt(document.getElementById("cantidadBebida").value);
 
+            // Precios de los platos y las bebidas
             var precioPlatos = {
                 "Sancocho": 20000,
                 "Arroz con pollo": 15600,
                 "Pasta napolitana": 30000,
             };
 
-            var precioBebidas={
+            var precioBebidas = {
                 "Gaseosas": 1500,
                 "Limonadas": 3000,
                 "jugosas": 3500,
             };
             
-            var totalPlatos= precioPlatos[tipoPlato]*cantidadPatos;
-            var totalBebidas= precioBebidas[totalBebidas]*cantidadBebida;
-            var total=  totalPlatos + totalBebidas;
+            // Cálculo del total de platos y bebidas
+            var totalPlatos = precioPlatos[tipoPlato] * cantidadPatos;
+            var totalBebidas = precioBebidas[totalBebidas] * cantidadBebida;
+            var total = totalPlatos + totalBebidas;
 
+            // Mostrar el resultado en el elemento HTML
             var resultado = document.getElementById("resultado");
             resultado.textContent = "total a pagar: $" + total;
         }
     </script>
 </body>
 </html>
-
-

@@ -1,24 +1,28 @@
 div#respuesta{
-    display: none;
-    text-align: center;
+    display: none; /* Oculta el elemento con el id 'respuesta' */
+    text-align: center; /* Alinea el texto al centro dentro del elemento */
 }
+
 .label{
-    width: 280px;
-    height: 80px;
-    position: sticky;
-    top: 30px; left: 400px;
-    text-align: center;
+    width: 280px; /* Establece el ancho del elemento con la clase 'label' */
+    height: 80px; /* Establece la altura del elemento con la clase 'label' */
+    position: sticky; /* Define la posición pegajosa del elemento */
+    top: 30px; /* Ubica el elemento 30px desde la parte superior */
+    left: 400px; /* Ubica el elemento 400px desde el lado izquierdo */
+    text-align: center; /* Alinea el texto al centro dentro del elemento */
 }
+
 h1{
-    color: #da35f3dd;
-    text-decoration:overline;
+    color: #da35f3dd; /* Establece el color del texto del elemento h1 */
+    text-decoration: overline; /* Aplica una línea encima del texto del elemento h1 */
 }
 
 body {
-    background-color: #d7f8f7;
-    text-align: center;
+    background-color: #d7f8f7; /* Establece el color de fondo para todo el cuerpo de la página */
+    text-align: center; /* Alinea el texto al centro dentro del cuerpo de la página */
 }
+
 button{
-    border-radius: 15px;
-    color-scheme:#6dfbaddd ;
+    border-radius: 15px; /* Define el radio de borde para el botón */
+    color-scheme: #6dfbaddd; /* Establece el esquema de colores para el botón */
 }
